@@ -3,15 +3,32 @@
 	font-family: "Dejavu Sans";
 	margin: 0;
 }*/
+body {
+	background: url(competition.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+/*.navbar-bg {
+	-webkit-filter: blur(50px);
+	z-index: 99;
+}
+*/
 #navbar {
-	background-color: rgb(200,50,100);
-
+	background: rgba(100,100,100,0.75);
+	z-index: 100;
+	/*z-index: 100;*/
+}
+#blur {
+	background: rgba(100,100,100,0.5);
+	-webkit-filter: blur(5px);
+	z-index: 99;
+	border: solid;
 }
 #header {
-	color: rgb(0,0,0);
+	color: rgb(250,250,250);
 }
 #test li a {
-	color: rgb(0,0,0);
+	color: rgb(250,250,250);
 }
 header {
 	background: rgb(200, 100, 100);
@@ -21,8 +38,11 @@ header {
 	height: 70px;
 	background-repeat: no-repeat;
 }
-hr {
-	color: rgb(0,0,0);
+hr.style-five {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .col-centered {
 float: none;
