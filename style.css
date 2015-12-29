@@ -4,7 +4,7 @@
 	margin: 0;
 }*/
 #navbar {
-	background-color: rgb(200,100,100);
+	background-color: rgb(200,50,100);
 
 }
 #header {
@@ -23,6 +23,10 @@ header {
 }
 hr {
 	color: rgb(0,0,0);
+}
+.col-centered {
+float: none;
+margin: 0 auto;
 }
 /*.match {
 	border: solid;

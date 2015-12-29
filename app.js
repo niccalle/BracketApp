@@ -11,20 +11,27 @@ app.controller('BracketController', function($scope){
 		var bracket = [];
 		var diff = closestPowerOf2(entrants.length) - entrants.length;
 		for (var i = 0; i < diff; i++){
-			entrants.splice(i, 0, "BYE");
+			entrants.splice(i, 0, "BYE"); //Add as many bye's necessary to make the entrants a power of 2
 			diff++;
 			i++;	
 		}
-		//diff = 2 i = 0 splice 0 i = 1 i = 2 diff = 3 splice 2 diff = 4 i = 3 i = 4 splice 
 		for (var i = 0; i < entrants.length; i++){
-			bracket.push([entrants[i], entrants[i+1]]);
+			bracket.push([entrants[i], entrants[i+1]]); //Pair up the entrants
 			i++;
 		}
 		bracket = [bracket];
 		for(var i = 0; i < bracket.length; i++){
-			var nextRound = [];
+			var nextRound = [];// Next round in the 
 			for(var j = 0; j < bracket[i].length;j++){
-				nextRound.push([bracket[i][j][1],bracket[i][j+1][1]]);
+				nextMatch = ["W of " + bracket[i][j][0] + "vs" + bracket[i][j][1],"W of " + bracket[i][j+1][0] + "vs" + bracket[i][j+1][1]];
+				//Check if there contains a BYE
+				if(bracket[i][j][0] == "BYE"){
+					nextMatch[0] = bracket[i][j][1];//Skip that round
+				}
+				if(bracket[i][j+1][0] == "BYE"){
+					nextMatch[1] = bracket[i][j+1][1];//Skip That Round
+				}
+				nextRound.push(nextMatch)
 				j++;
 			}
 			bracket.push(nextRound);
@@ -58,5 +65,11 @@ app.controller('BracketController', function($scope){
 			$scope.entrants = bracketCreator(entrants);
 		}
 	};
+	$scope.hasBye = function(pair){
+		if(pair[0] == "BYE"){
+			return true;
+		}
+		return false;
+	}
 	$scope.entrants = bracketCreator(entrants);
 });

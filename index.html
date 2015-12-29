@@ -49,10 +49,10 @@
 		<br/>
 		<div class="text-center" ng-repeat="round in entrants">
 			<div class="row">
-					<div class="col-md-12">
+					<div class="test">
 						<ul id="bracket" class="list-inline">
 							<li ng-repeat="pair in round" class="match">
-								<ul class="list-unstyled">
+								<ul class="list-inline well" ng-hide= "hasBye(pair)">
 									<li ng-repeat="entrant in pair" class="entrant">
 										<p>{{entrant}}</p>
 									</li>
