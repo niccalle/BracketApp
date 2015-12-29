@@ -1,0 +1,60 @@
+/*body {
+	background-color: rgb(245,245,245);
+	font-family: "Dejavu Sans";
+	margin: 0;
+}*/
+#navbar {
+	background-color: rgb(200,100,100);
+
+}
+#header {
+	color: rgb(0,0,0);
+}
+#test li a {
+	color: rgb(0,0,0);
+}
+header {
+	background: rgb(200, 100, 100);
+	width: 100%;
+	margin: 0 0 10 0;
+	overflow: hidden;
+	height: 70px;
+	background-repeat: no-repeat;
+}
+hr {
+	color: rgb(0,0,0);
+}
+/*.match {
+	border: solid;
+	margin: 10px 0 10px 0;
+}
+ul {
+	padding-left: 0;
+}
+li {
+	list-style-type: none;
+}
+
+li.entrant{
+	margin: 0 0 0 0;
+}
+li.entrant:nth-child(even) {
+	border-top-style: solid;
+}
+
+li.entrant:nth-child(odd) {
+	border-bottom-style: solid; 
+}
+
+li p {
+	text-align: center;
+}
+*/
+input {
+	display: block;
+	margin-top: 10px;
+}
+
+#aboutUs:hover, #aboutUs {
+
+}
