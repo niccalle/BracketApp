@@ -78,7 +78,53 @@ input {
 	display: block;
 	margin-top: 10px;
 }
-
-#aboutUs:hover, #aboutUs {
-
+ul.well{
+	width: auto;
+	height: auto;
+	position: relative;
 }
+
+ul.well:hover{
+	-webkit-filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9));
+	background-repeat: no-repeat;
+	background-size: 200% 100%;
+	transform: translate(-1px, -1px);
+}
+
+.active {
+	background: url(solid-green.jpg);
+	opacity: 0.3;
+	background-size:100% 100%;
+	background-repeat: no-repeat;
+	/*background: rgb(100,200,100);*/
+}
+.test-left {
+	position: absolute;
+	top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    z-index: -0;
+}
+.test-right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	z-index: -0;
+}
+textarea {
+	text-align: center;
+}
+input {
+	text-align: center;
+}
+/*.entrant:hover{
+	background-color: rgb(100,100,200);
+	position: absolute;
+	top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+}*/

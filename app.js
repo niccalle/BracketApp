@@ -1,7 +1,7 @@
 var app = angular.module('bracketApp', []);
 
 app.controller('BracketController', function($scope){
-	var entrants = ["One", "Two", "Three", "Four"];
+	var entrants = ["Guac", "Hoa", "sksk", "lyn"];
 	function bracketCreator(entrants){
 		//Add functionality for odd numbers
 		/*
@@ -70,6 +70,14 @@ app.controller('BracketController', function($scope){
 			return true;
 		}
 		return false;
+	}
+	$scope.winner = function(round, match, winner){
+		console.log((round+1) + " " + (match/2) + " " + (match%2));
+		console.log($scope.entrants.length);
+		var win = $scope.entrants[round][match][winner];
+		if(round < $scope.entrants.length){
+			$scope.entrants[round+1][Math.floor(match/2)][match%2] = win;
+		}
 	}
 	$scope.entrants = bracketCreator(entrants);
 });
