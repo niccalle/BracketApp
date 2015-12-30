@@ -1,0 +1,50 @@
+	<div class="container text-center">
+		<div class="row well">
+			<div class="col-md-12">
+				<div class="sub-content">
+					<h2>Add Entrants</h2>
+					<form ng-submit="submit2()">
+						<input class = "form-control" type="text" ng-model="text" name="text"/>
+						<br/>
+						<button class="btn btn-primary btn-lg" type="submit" value="Submit">
+							Add Entrant
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="text-center" ng-repeat="round in entrants" ng-init="roundNum = $index">
+			<div class="row">
+<!-- 					<div class="test">
+ -->						<ul id="bracket" class="list-inline">
+								<li ng-repeat="pair in round" class="match">
+										<ul class="list-inline well" ng-hide= "hasBye(pair)" ng-init="matchNum = $index">
+<!-- 											<li ng-repeat="entrant in pair" class="entrant one">
+												<p class="entrant">{{entrant}}</p>
+											</li> -->
+											<li class="entrant left">
+												{[{pair[0]}]}
+											</li>
+											<li class="entrant right">
+												{[{pair[1]}]}
+											</li>
+											<div class="clearfix test-left" 
+											ng-class="{active: hover1}"
+											ng-mouseenter="hover1 = true"
+											ng-mouseleave="hover1 = false"
+											ng-click="winner(roundNum,matchNum, 0)"></div>
+											<div class="clearfix test-right"
+											ng-class="{active: hover2}"
+											ng-mouseenter="hover2 = true"
+											ng-mouseleave="hover2 = false"
+											ng-click="winner(roundNum,matchNum, 1)"></div>
+										</ul>
+								</li>
+						</ul>
+<!-- 					</div>
+ -->			</div>
+			<hr class="style-five"/>
+		</div>
+
+	</div>

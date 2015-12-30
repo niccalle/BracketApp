@@ -1,0 +1,130 @@
+/*body {
+	background-color: rgb(245,245,245);
+	font-family: "Dejavu Sans";
+	margin: 0;
+}*/
+body {
+	background: url(/assets/competition.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+/*.navbar-bg {
+	-webkit-filter: blur(50px);
+	z-index: 99;
+}
+*/
+#navbar {
+	background: rgba(100,100,100,0.75);
+	z-index: 100;
+	/*z-index: 100;*/
+}
+#blur {
+	background: rgba(100,100,100,0.5);
+	-webkit-filter: blur(5px);
+	z-index: 99;
+	border: solid;
+}
+#header {
+	color: rgb(250,250,250);
+}
+#test li a {
+	color: rgb(250,250,250);
+}
+header {
+	background: rgb(200, 100, 100);
+	width: 100%;
+	margin: 0 0 10 0;
+	overflow: hidden;
+	height: 70px;
+	background-repeat: no-repeat;
+}
+hr.style-five {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.col-centered {
+float: none;
+margin: 0 auto;
+}
+/*.match {
+	border: solid;
+	margin: 10px 0 10px 0;
+}
+ul {
+	padding-left: 0;
+}
+li {
+	list-style-type: none;
+}
+
+li.entrant{
+	margin: 0 0 0 0;
+}
+li.entrant:nth-child(even) {
+	border-top-style: solid;
+}
+
+li.entrant:nth-child(odd) {
+	border-bottom-style: solid; 
+}
+
+li p {
+	text-align: center;
+}
+*/
+input {
+	display: block;
+	margin-top: 10px;
+}
+ul.well{
+	width: auto;
+	height: auto;
+	position: relative;
+}
+
+ul.well:hover{
+	-webkit-filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9));
+	background-repeat: no-repeat;
+	background-size: 200% 100%;
+	transform: translate(-1px, -1px);
+}
+
+.active {
+	background: url(/assets/solid-green.jpg);
+	opacity: 0.3;
+	background-size:100% 100%;
+	background-repeat: no-repeat;
+	/*background: rgb(100,200,100);*/
+}
+.test-left {
+	position: absolute;
+	top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    z-index: -0;
+}
+.test-right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	z-index: -0;
+}
+textarea {
+	text-align: center;
+}
+input {
+	text-align: center;
+}
+/*.entrant:hover{
+	background-color: rgb(100,100,200);
+	position: absolute;
+	top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+}*/
