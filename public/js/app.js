@@ -6,7 +6,7 @@ app.config(function($interpolateProvider) {
 });
 
 app.controller('BracketController', function($scope){
-	var entrants = ["Guac", "Hoa", "sksk", "lyn"];
+	var entrants = ["One", "Two", "Three", "Four"];
 	function bracketCreator(entrants){
 		//Add functionality for odd numbers
 		/*

@@ -3,10 +3,22 @@
 	font-family: "Dejavu Sans";
 	margin: 0;
 }*/
+@font-face {
+	font-family: Sawasdee;
+	src: url(assets/Sawasdee.ttf);
+}
+html {
+	height: 100%;
+}
 body {
-	background: url(/assets/competition.jpg);
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ), url(/assets/forest.jpg);
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: cover;
+	font-family: Sawasdee;
+	font-size: 18px;
 }
 /*.navbar-bg {
 	-webkit-filter: blur(50px);
