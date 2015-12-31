@@ -26,12 +26,12 @@ body {
 }
 */
 #navbar {
-	background: rgba(100,100,100,0.75);
+	background: rgba(0,0,0,0.2);
 	z-index: 100;
 	/*z-index: 100;*/
 }
 #blur {
-	background: rgba(100,100,100,0.5);
+	background: rgba(0,0,0,0.2);
 	-webkit-filter: blur(5px);
 	z-index: 99;
 	border: solid;
@@ -128,6 +128,7 @@ ul.well:hover{
 }
 textarea {
 	text-align: center;
+	font-size: 14px;
 }
 input {
 	text-align: center;
