@@ -14,5 +14,11 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/niccalle/BracketApp/issues"
+  },
+  "dependencies": {
+    "express": "~4.13.3",
+    "mongoose": "~4.3.4",
+    "body-parser": "~1.14.2",
+    "express-handlebars": "~2.0.1"
   }
 }
