@@ -4,7 +4,9 @@ var mongoose = require('mongoose');
 var app = express();
 var Bracket = require('./models/bracketModel');
 app = config.initialize(app);
-app.listen(8080);
+app.listen(app.get('port'), function(){
+	console.log("running on port whatever");
+});
 mongoose.connect('mongodb://niccalle:tyutyu@ds037415.mongolab.com:37415/bracketapp');
 mongoose.connection.on('open', function(){
 	console.log("Mongoose connected");
