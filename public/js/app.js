@@ -8,7 +8,8 @@ app.config(function($interpolateProvider) {
 app.controller('BracketController', function($scope, $http){
 	$scope.entrants = [];
 	var bracketEntrants = [];
-	$http.get('/getBracket').then(
+	var bracketId = window.location.href.slice(-4);
+	$http.get('/getBracket/'+bracketId).then(
 		function successCallback(response){
 			console.log(response['data'][0]);
 			$scope.entrants = response['data'];
@@ -27,7 +28,7 @@ app.controller('BracketController', function($scope, $http){
 		if($scope.text){
 			bracketEntrants.push($scope.text);
 			// cleanEntrants();
-			$http.post('/addEntrant', {'data': bracketEntrants}).then(
+			$http.post('/addEntrant', {'bracketId': bracketId,'data': bracketEntrants}).then(
 				function successCallback(response){
 					$scope.entrants = response['data'];
 					console.log(response);
@@ -48,9 +49,9 @@ app.controller('BracketController', function($scope, $http){
 		console.log((round+1) + " " + (match/2) + " " + (match%2));
 		console.log($scope.entrants.length);
 		var win = $scope.entrants[round][match][winner];
-		if(round < $scope.entrants.length){
+		if(round < $scope.entrants.length-1){
 			$scope.entrants[round+1][Math.floor(match/2)][match%2] = win;
-			$http.post('/updateBracket', {'data': $scope.entrants});
+			$http.post('/updateBracket', {'bracketId': bracketId,'data': $scope.entrants});
 		}
 	}
 	// function cleanEntrants(){

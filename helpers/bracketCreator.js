@@ -1,3 +1,5 @@
+var Bracket = require('../models/bracketModel');
+
 function closestPowerOf2(num){
 	var count = 2;
 	while(count < num){
@@ -12,6 +14,11 @@ module.exports.create = function(entrants){
 		the bracket is above the closest power of two
 		*/
 		var bracket = [];
+		if(entrants.length <= 2){
+			var round = [entrants];
+			bracket.push(round);
+			return bracket;
+		}
 		var diff = closestPowerOf2(entrants.length) - entrants.length;
 		for (var i = 0; i < diff; i++){
 			entrants.splice(i, 0, "BYE"); //Add as many bye's necessary to make the entrants a power of 2
@@ -44,3 +51,49 @@ module.exports.create = function(entrants){
 		}
 		return bracket;
 		};
+
+module.exports.newBracket = function(res){
+		var everyChar = "abcdefghijklmnopqrstuvwkyz";
+		var brktId = "";
+		for(var i = 0; i < 4; i++){
+			brktId += everyChar.charAt(Math.random()*26);
+		}
+		Bracket.findOne({'bracketId': brktId}, function(err, bracket){
+			if(bracket){
+				newBracket();
+			}
+			else{
+				data = {
+					'bracketId': brktId,
+					'bracketName': "Test", 
+					'rounds': [{'round': [{'pair': []}]}]
+				};
+				var newModel = new Bracket(data);
+				newModel.save(function(err, succ){
+					console.log("New Model Saved");
+					res.redirect('/bracket/'+brktId);
+				});
+			}
+		})
+}
+
+module.exports.getBracket = function(id, res){
+	Bracket.findOne({'bracketId': id}, function(err, bracket){
+		if(err){
+			console.log(err);
+		}
+		else if(bracket){
+			var bt = [];
+			if(bracket.rounds[0].round[0].pair.length > 1){
+				bracket['rounds'].forEach(function(rnd){
+					var round = [];
+					rnd['round'].forEach(function(pair){
+						round.push(pair['pair']);
+					});
+					bt.push(round);
+				})
+			}
+			res.send(bt);
+		}
+	})
+}
